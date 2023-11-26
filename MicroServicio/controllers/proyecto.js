@@ -11,6 +11,7 @@ const Etapa = require('../models/etapa');
  * crea un Proyecto
  */
 const createProyecto = async (req = request, res = response) => {
+    console.log("Peticion createProyecto")
     try{
         const data = req.body
          const { cliente, tipoProyecto, universidad, etapa} = data ;
@@ -54,7 +55,7 @@ const createProyecto = async (req = request, res = response) => {
                 msj: 'No existe esta etapa de proyecto'
             })
         }
-         // TAREA: Validar que marca, estado y tipo existan y estén activos
+         // TAREA: Validar 
  
          const proyecto = new Proyecto(data);
          await proyecto.save();
@@ -70,6 +71,7 @@ const createProyecto = async (req = request, res = response) => {
  * Consultar todos los proyectos
  */
 const getProyectos = async (req, res = response) => {
+    console.log("Peticion getProyectos")
     try{
         const proyectosBD = await Proyecto.find()
         .populate({
@@ -94,6 +96,7 @@ const getProyectos = async (req, res = response) => {
  * Consultar todos inventarios
  */
  const getProyectoByID = async (req = request, res = response) => {
+    console.log("Peticion getProyectoByID")
     try{
         const { id } = req.params;
         const query = { _id: id};
