@@ -149,5 +149,4 @@ const updateInventario = async (req = request, res = response) => {
     }*/
 }
 
-
 module.exports = { createProyecto, getProyectos, getProyectoByID };

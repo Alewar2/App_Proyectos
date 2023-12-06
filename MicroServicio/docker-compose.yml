@@ -15,7 +15,7 @@ services :
 #Instancia 2
   proyectos-micro-2: 
     container_name: proyectos-micro-2 
-    image : proyectos-micro:v1
+    image : proyectos-micro:v1 
     build :
       context : .
     ports : 
@@ -44,5 +44,8 @@ services :
     networks : 
       - proyectos-app
 
+    enviroment:
+      - MONGO_URI: ${MONGO_URI}
+      - PORT:
 networks : 
   proyectos-app : 

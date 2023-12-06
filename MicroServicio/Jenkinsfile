@@ -1,0 +1,27 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Clonar repositorio') {
+            steps {
+                 git branch: 'master', 
+                 credentialsId: 'git-jenkins', 
+                 url: 'https://github.com/Alewar2/App_Proyectos.git'
+            }
+        }
+
+        stage('Construir imagen de docker') {
+
+        }
+
+        stage('Desplegar el contenedor de docker') {
+
+        }
+    }
+
+    post {
+        always {
+
+        }
+    }
+}
